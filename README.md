@@ -2,7 +2,7 @@
 
 **Project Name:** PlugAndPlay  
 **Project Type:** React + Vite Frontend Application  
-**Version:** 0.0.0  
+**Version:** 1.0.0  
 **Description:** Skip Setup. Start Building. - A template-based development platform designed to accelerate development with efficient code templates for modern projects.
 
 ---
@@ -507,8 +507,8 @@ const baseUrl = axios.create({
 
 ### **.env**
 ```
-VITE_BASE_URL=http://localhost:8081/api/v1/auth
-VITE_API_ENDPOINT=http://localhost:8081/api/v1
+VITE_BASE_URL=/
+VITE_API_ENDPOINT=/
 # Add other environment variables as needed
 ```
 
