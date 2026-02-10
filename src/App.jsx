@@ -41,7 +41,7 @@ function App() {
 
             <Route path="/" element={<Dashboard status={loginStatus} />}>
               <Route path="/profile" element={<Profile />} />
-            <Route path="/addtemplate" element={<AddTemplate />} />
+              <Route path="/addtemplate" element={<AddTemplate />} />
             </Route>
 
             <Route path="/oauth/success" element={<OAuthSuccess />} />
@@ -49,7 +49,7 @@ function App() {
 
           </Route>
         </Routes>
-        <ReactQueryDevtools initialIsOpen={false} />
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </div>
   );

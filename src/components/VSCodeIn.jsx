@@ -10,7 +10,6 @@ export default function VSCodeIn({code,width}) {
         borderRadius: "10px",
         overflow: "hidden",
         background: "#1e1e1e",
-        // boxShadow: "0 10px 30px rgba(255, 251, 251, 0.62)",
       }}
     >
       {/* Title Bar */}

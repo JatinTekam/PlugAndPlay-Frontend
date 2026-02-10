@@ -7,6 +7,7 @@ import { addTemplate } from "../services/user/user";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../services/auth/store";
+import Editor from "@monaco-editor/react";
 
 const AddTemplate = () => {
   const [darkMode] = useContext(DarkMode);
@@ -56,6 +57,22 @@ const AddTemplate = () => {
     HTML: "html",
     CSS: "css",
     SQL: "sql",
+  };
+
+  const languageMap = {
+    js: "javascript",
+    ts: "typescript",
+    py: "python",
+    java: "java",
+    cpp: "cpp",
+    cs: "csharp",
+    php: "php",
+    rb: "ruby",
+    go: "go",
+    rs: "rust",
+    html: "html",
+    css: "css",
+    sql: "sql",
   };
 
   const { mutateAsync, isPending } = useMutation({
@@ -356,19 +373,30 @@ const AddTemplate = () => {
                     >
                       Code Content *
                     </label>
-                    <textarea
-                      value={file.content}
-                      onChange={(e) =>
-                        handleFileChange(index, "content", e.target.value)
-                      }
-                      placeholder="Paste your code here..."
-                      rows="10"
-                      className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-mono text-xs sm:text-sm transition-all duration-200 resize-none ${
-                        darkMode
-                          ? "bg-gray-800 border border-gray-700 text-gray-300 placeholder-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                          : "bg-gray-50 border border-gray-300 text-gray-700 placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                      } focus:outline-none`}
-                    />
+                    <div className={`rounded-lg border overflow-hidden transition-all duration-200 ${
+                      darkMode
+                        ? "bg-gray-800 border-gray-700"
+                        : "bg-gray-50 border-gray-300"
+                    }`}>
+                      <Editor
+                        height="400px"
+                        language={languageMap[file.extension.toLowerCase()] || "javascript"}
+                        value={file.content}
+                        onChange={(value) =>
+                          handleFileChange(index, "content", value || "")
+                        }
+                        theme={darkMode ? "vs-dark" : "vs"}
+                        options={{
+                          minimap: { enabled: false },
+                          fontSize: 14,
+                          lineNumbers: "on",
+                          scrollBeyondLastLine: false,
+                          automaticLayout: true,
+                          wordWrap: "on",
+                          padding: { top: 10, bottom: 10 },
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
