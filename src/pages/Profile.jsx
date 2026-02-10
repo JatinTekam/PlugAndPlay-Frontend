@@ -88,13 +88,6 @@ export const Profile = () => {
           <div className="flex gap-3 flex-shrink-0">
             <>
               <button
-                onClick={() => handleGetUser()}
-                className={`px-6 sm:px-8 py-3 cursor-pointer rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95 flex items-center gap-2 text-white bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 shadow-lg hover:shadow-xl`}
-              >
-                <FiEdit2 className="w-4 h-4" />
-                Edit Profile
-              </button>
-              <button
                 className={`px-6 sm:px-8 py-3 cursor-pointer rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95 text-white bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 shadow-lg hover:shadow-xl`}
                 onClick={() => logout()}
               >
