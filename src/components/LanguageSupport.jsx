@@ -31,7 +31,7 @@ function LanguageSupport(){
         <div className={`flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-10 ${darkMode ? "text-white" : "text-black"}`}>
           {languages.map(({ Icon, label, color }) => (
             <div key={label} className="flex flex-col items-center gap-2 group">
-              <div className={`${color} text-4xl sm:text-5xl md:text-6xl transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1`}>
+              <div className={`${color} text-4xl sm:text-5xl cursor-pointer md:text-6xl transition-transform duration-300  group-hover:scale-110 group-hover:-translate-y-1`}>
                 <Icon />
               </div>
               <span className={`text-xs sm:text-sm font-medium ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
